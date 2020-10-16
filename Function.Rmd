@@ -1,0 +1,256 @@
+---
+title: "R Function"
+output: html_notebook
+---
+#by : 19523118 - 19523201
+
+#exercise 3
+```{r}
+## 1.1
+f1 <- function(x){
+  hasil <- x^3 + x^2 - 6
+  return(hasil)
+}
+##percobaan
+f1(1)
+f1(5)
+f1(10)
+
+##1.2
+f2 <- function(a, b){
+  hasil <- a*b*(b-a)
+  return(hasil)
+}
+##percobaan
+f2(1,2)
+f2(5,6)
+f2(10,12)
+
+##1.3
+f3 <- function(m, n){
+  hasil <- (sqrt(m)/n) + m - 2*n 
+  return(hasil)
+}
+##percobaan
+f3(1,2)
+f3(5,6)
+f3(10,12)
+
+##2.1
+a <- matrix(c(1:4), 2, 2, TRUE)
+b <- matrix(c(8:11), 2, 2, TRUE)
+f4 <- function(a,b){
+    result <- (a+b)%*%a%*%b
+    return(result)
+}
+f4(a,b)
+
+##2.2
+c <- matrix(c(5:8), 2, 2, TRUE)
+d <- matrix(c(10:13), 2, 2, TRUE)
+f5 <- function(m,n){
+    result <- det(m) *n - m%*%n
+    return(result)
+}
+f5(c,d)
+
+##2.3
+e <- matrix(c(8:11), 2, 2, TRUE)
+f6 <- function(x){
+  hasil <- solve(x)*x-(2*x)
+  return(hasil)
+}
+f6(e)
+```
+
+
+#exercise 4
+$$f(x)=sin(x)$$
+```{r}
+f1 <- function(x){
+  hasil <- sin(x)
+  return(hasil)
+}
+
+input <- -1:1
+plot(input, sapply(input, f1),type = "l", xlab = "x", ylab = "f(x)")
+
+## -1 <= input <= 1
+```
+
+$$f(x)=log(x)$$
+```{r}
+f2 <- function(x){
+  hasil <- log(x)
+  return(hasil)
+}
+
+input <- 0:20
+plot(input, sapply(input, f2),type = "l", xlab = "x", ylab = "f(x)")
+
+##input > 0
+```
+
+$$f(x)=akarx - 2$$
+```{r}
+f3 <- function(x){
+  hasil <- sqrt(x) - 2
+  return(hasil)
+}
+input <- 20:40
+plot(input, sapply(input, f3),type = "l", xlab = "x", ylab = "f(x)")
+
+##input > 0
+```
+
+$$f(x)=akarx-2$$
+```{r}
+f4 <- function(x){
+  hasil <- sqrt(x-2)
+  return(hasil)
+}
+input <- 0:10
+plot(input, sapply(input, f4),type = "l", xlab = "x", ylab = "f(x)")
+
+##input > 0
+```
+
+$$f(x)=akar2-x$$
+```{r}
+f5 <- function(x){
+  hasil <- sqrt(2-x)
+  return(hasil)
+}
+input <- 2:20
+plot(input, sapply(input, f4),type = "l", xlab = "x", ylab = "f(x)")
+
+##input >= 2
+```
+
+
+
+#Exercise 4 Cont'd
+
+a) y = x^3
+```{r}
+f <- function(x){
+  fx <- x^3
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+
+```
+b) y = x^3 - 2x^2 - 3x +4
+```{r}
+f <- function(x){
+  fx <- x^3 - 2*x^2 - 3*x +4
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+c) y = 2x^3 - x + 5 
+```{r}
+f <- function(x){
+  fx <- 2*x^3 - x + 5 
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+d) y = x^3 - 3x^2 + 3x -1
+```{r}
+f <- function(x){
+  fx <- x^3 - 3*x^2 + 3*x -1
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+e) y = -x^3
+```{r}
+f <- function(x){
+  fx <- -x^3
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+f) y = -x^3 + 2x^2 + 3x -4
+```{r}
+f <- function(x){
+  fx <- -x^3 + 2*x^2 + 3*x -4
+  return(fx)
+}
+input<-seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+g) y = x^4
+```{r}
+f <- function(x){
+  fx <- x^4
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+h) y = x^4 - x^3 - x^2 + x + 1
+```{r}
+f <- function(x){
+  fx <- x^4 - x^3 - x^2 + x + 1
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+i) y = x^4 - 3x^3 + 2x^2 + x - 1
+```{r}
+f <- function(x){
+  fx <- x^4 - 3*x^3 + 2*x^2 + x - 1
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+j) y = y = x^4 - 4x^3 + 6x^2 - 4x
+```{r}
+f <- function(x){
+  fx <- x^4 - 4*x^3 + 6*x^2 - 4*x
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+k) y = -x^4
+```{r}
+f <- function(x){
+  fx <- -x^4
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+l) y = -x^4 - 2x^3 + 3x
+```{r}
+f <- function(x){
+  fx <- -x^4 - 2*x^3 + 3*x
+  return(fx)
+}
+input<- seq(-10 , 11 , 0.1 )
+plot(input,sapply(input,f), type = "l", xlab = "x", ylab = "f(x)")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
